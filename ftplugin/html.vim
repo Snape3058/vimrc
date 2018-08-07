@@ -19,7 +19,7 @@ nnoremap <F6> :!firefox %<cr>
 
 " auto-pairs {{{
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '<':'>'}
-let g:back_brackets_+= ['>']
+let g:back_brackets += ['>']
 " }}}
 
 " }}}
