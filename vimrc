@@ -28,6 +28,9 @@ set timeoutlen=1000
 set foldmethod=marker   " enable marker folding
 set wildignorecase      " ignore case when completing path/file names
 
+" auto resize window when host window is resized
+autocmd VimResized * wincmd =
+
 " }}}
 
 " additional highlight configurations {{{
