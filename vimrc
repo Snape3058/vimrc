@@ -155,6 +155,7 @@ else
     Plugin 'Mizuchi/STL-Syntax'
     Plugin 'pix/vim-known_hosts'
     Plugin 'Snape3058/vim-smali'
+    Plugin 'bohlender/vim-smt2'
 
     " post load vundle {{{
     call vundle#end()
