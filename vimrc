@@ -153,6 +153,7 @@ else
     Plugin 'scrooloose/syntastic'
     Plugin 'jiangmiao/auto-pairs'
     Plugin 'Lokaltog/vim-powerline'
+    Plugin 'rhysd/vim-clang-format'
 
     "   syntax highlight rules
     Plugin 'Mizuchi/STL-Syntax'
@@ -196,6 +197,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_filetype_map = { 'googletest': 'cpp' }
 nnoremap <silent> ,, :SyntasticReset<cr>
 nnoremap <silent> ,. :SyntasticCheck<cr>
+" }}}
+" clang-format {{{
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
+let g:clang_format#auto_formatexpr = 1
 " }}}
 
 " }}}
