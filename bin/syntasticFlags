@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 if [ -f '.syntastic_cpp_config' ]; then
-    echo .syntastic_cpp_config
+    cat .syntastic_cpp_config
 fi
