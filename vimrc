@@ -154,6 +154,7 @@ else
     Plugin 'jiangmiao/auto-pairs'
     Plugin 'Lokaltog/vim-powerline'
     Plugin 'rhysd/vim-clang-format'
+    Plugin 'skywind3000/asyncrun.vim'
 
     "   syntax highlight rules
     Plugin 'Mizuchi/STL-Syntax'
