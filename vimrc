@@ -127,44 +127,35 @@ nnoremap + O<esc>
 
 " }}}
 
-" Vundle (plugin management) {{{
+" plugin management {{{
 
-" pre load vundle {{{
-if 0 != system("ls ~/.vim/bundle/Vundle.vim/ 2>/dev/null 1>/dev/null; echo $?")
-    "   define a command to install Vundle if not installed
-    "   otherwise, load vundle configurations
-    echo "Vundle not installed, execute 'InstallVundle' to install Vundle."
-    command InstallVundle !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" pre load plugin manager {{{
+if 0 != system("ls ~/.vim/autoload/plug.vim 1>/dev/null 2>/dev/null; echo $?")
+    "   define a command to install plugin manager if not installed
+    "   otherwise, load plugin manager configurations
+    echo "Plugin manager is not installed, execute 'InstallPluginManager' to install it."
+    command InstallPluginManager !curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim --create-dirs -o ~/.vim/autoload/plug.vim
 else
-    " required by Vundle
-    filetype off
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+    call plug#begin('~/.vim/bundle/')
     " }}}
 
-    " load plugins: username/repo
-    "   Vundle
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'eparreno/vim-l9'
-
     "   plugins
-    Plugin 'vim-scripts/AutoComplPop'
-    Plugin 'vim-scripts/OmniCppComplete'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'jiangmiao/auto-pairs'
-    Plugin 'Lokaltog/vim-powerline'
-    Plugin 'rhysd/vim-clang-format'
-    Plugin 'skywind3000/asyncrun.vim'
+    Plug 'vim-scripts/AutoComplPop'
+    Plug 'vim-scripts/OmniCppComplete'
+    Plug 'scrooloose/syntastic'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'Lokaltog/vim-powerline'
+    Plug 'rhysd/vim-clang-format'
+    Plug 'skywind3000/asyncrun.vim'
 
     "   syntax highlight rules
-    Plugin 'Mizuchi/STL-Syntax'
-    Plugin 'pix/vim-known_hosts'
-    Plugin 'Snape3058/vim-smali'
-    Plugin 'bohlender/vim-smt2'
+    Plug 'Mizuchi/STL-Syntax'
+    Plug 'pix/vim-known_hosts'
+    Plug 'Snape3058/vim-smali'
+    Plug 'bohlender/vim-smt2'
 
-    " post load vundle {{{
-    call vundle#end()
-    filetype plugin indent on
+    " post load plugin manager {{{
+    call plug#end()
 endif
 " }}}
 
