@@ -149,9 +149,11 @@ else
     " }}}
 
     "   plugins
-    Plug 'vim-scripts/AutoComplPop'
-    Plug 'vim-scripts/OmniCppComplete'
-    Plug 'scrooloose/syntastic'
+    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+    Plug 'Shougo/deoplete.nvim', { 'do': 'pip3 install --user pynvim' }
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+
     Plug 'jiangmiao/auto-pairs'
     Plug 'Lokaltog/vim-powerline'
     Plug 'rhysd/vim-clang-format'
@@ -172,32 +174,30 @@ endif
 
 " plugin configurations: {{{
 
-" OmniCppComplete: {{{
-"    set function with filetype
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType googletest set omnifunc=cppcomplete#Complete
+" LanguageClient {{{
+let g:LanguageClient_serverCommands = {}
+let g:LanguageClient_serverCommands.c = ['clangd']
+let g:LanguageClient_serverCommands.cpp = ['clangd']
+let g:LanguageClient_serverCommands.python = ['pyls']
+let g:LanguageClient_rootMarkers = {
+            \ 'cpp': ['compile_commands.json', 'build'],
+            \ 'c': ['compile_commands.json', 'build']
+            \ }
+
+nnoremap <buffer> <silent> <c-]> :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'}) <cr>
+" }}}
+" deoplete {{{
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+" call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
+inoremap <expr><cr> pumvisible() ? "\<c-n>" : "\<cr>"
+inoremap <expr><c-j> pumvisible() ? "\<c-n>" : "\<c-j>"
+inoremap <expr><c-k> pumvisible() ? "\<c-p>" : "\<c-k>"
 " }}}
 " auto-pairs {{{
 "     set <tab> as close operator
 let g:back_brackets = [')', ']', '"', "'", '}', '`']
 inoremap <expr> <tab> index(g:back_brackets, getline('.')[col('.')-1]) >= 0 ? "\<right>" : "\<tab>"
-" }}}
-" syntastic: {{{
-let g:syntastic_error_symbol='!>'
-let g:syntastic_warning_symbol='*>'
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_filetype_map = { 'googletest': 'cpp' }
-nnoremap <silent> ,, :SyntasticReset<cr>
-nnoremap <silent> ,. :SyntasticCheck<cr>
 " }}}
 " clang-format {{{
 let g:clang_format#detect_style_file = 1
