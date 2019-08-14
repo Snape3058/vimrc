@@ -104,8 +104,17 @@ nnoremap <right> zb
 "   window forcus
 nnoremap <silent> ,m :up<cr>:wincmd h<cr>
 nnoremap <silent> ,l :up<cr>:wincmd l<cr>
+nnoremap <silent> ,. :up<cr>:wincmd l<cr>
 nnoremap <silent> ,k :up<cr>:wincmd k<cr>
 nnoremap <silent> ,j :up<cr>:wincmd j<cr>
+
+"   tab control
+nnoremap <silent> ,e gT
+nnoremap <silent> ,r gt
+nnoremap <silent> ,J gT
+nnoremap <silent> ,K gt
+nnoremap <silent> ,x :tabclose<cr>gT
+nnoremap <silent> ,X :tabclose<cr>
 
 "   long line highlight switch
 nnoremap <silent> ,- :LineLengthCheckOn<cr>
