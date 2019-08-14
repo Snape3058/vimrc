@@ -22,59 +22,34 @@ set tags+=~/.vim/tags/cpp
 
 " }}}
 
-" commands {{{
+" filetype keymaps {{{
+
 "   variables:
 if "googletest" == &ft
-    let gtestflags = " -lgtest -lgtest_main "
+    let b:gtestflags = " -lgtest -lgtest_main "
 else
-    let gtestflags = ""
+    let b:gtestflags = ""
 endif
 
 if "c" == &ft
-    let cc = "gcc"
+    let b:cc = "gcc"
 else
-    let cc = "g++"
+    let b:cc = "g++"
 endif
 
-let publicflags = " -g $(~/.vim/bin/syntasticFlags) "
+" Compile:
+nnoremap <buffer> <silent> <F7> :echo "Compiling ..." <cr> :echo system(b:cc.b:gtestflags." -o ".expand("%:t:r")." ".expand("%")) <cr>
 
-"   create ctags
-command Ctags :wa |:echo system("ctags -R --c++-kinds=+px --fields=+iaS --extra=+q .")
+" Run:
+nnoremap <buffer> <silent> <F6> :echo system(" ./".expand("%:t:r")." 2>&1") <cr>
 
-"   compile single file
-if filereadable("GNUmakefile") || filereadable("makefile") || filereadable("Makefile")
-    command Compile :make
-else
-    command Compile :echo system(cc.gtestflags.publicflags." -o ".expand("%:t:r")." ".expand("%"))
-endif
+nnoremap <buffer> <silent> ,, :cw 8<cr>
+nnoremap <buffer> <silent> ,! :ccl<cr>
 
-"   run single file
-command Run :echo system(" ./".expand("%:t:r")." 2>&1")
-" }}}
-
-" filetype keymaps {{{
-nnoremap <F2> :Ctags<cr>
-nnoremap <F6> :Run<cr>
-nnoremap <F7> :Compile<cr>
 " }}}
 
 " plugin configurations: {{{
-
-" OmniCppComplete: {{{
-let OmniCpp_ShowPrototypeInAbbr = 1
-let OmniCpp_SelectFirstItem = 2
-let OmniCpp_MayCompleteScope = 1
-let OmniCpp_MayCompleteArrow = 1
-let OmniCpp_MayCompleteDot = 1
-let OmniCpp_NamespaceSearch = 2
 "   auto-close Scratch when selected
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-" }}}
-" syntastic: {{{
-let g:syntastic_cpp_compiler_options = '-Wall '
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
-" }}}
-
 " }}}

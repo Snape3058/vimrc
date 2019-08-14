@@ -20,34 +20,20 @@ set cindent                     " cindent
 
 " }}}
 
-" commands {{{
-
-"   create ctags
-command Ctags :wa |:echo system("ctags -R --c++-kinds=+px --fields=+iaS --extra=+q .")
-
-"   compile single file
-if filereadable("GNUmakefile") || filereadable("makefile") || filereadable("Makefile")
-    command Compile :make
-else
-    command Compile :echo system("javac ".expand("%"))
-endif
-
-"   run single file
-command Run :echo system("java ".expand("%:t:r")." 2>&1")
-" }}}
-
 " filetype keymaps {{{
+
+" Compile:
+nnoremap <buffer> <silent> <F7> :echo "Compiling ..." <cr> :echo system("javac ".expand("%")) <cr>
+
+" Run:
+nnoremap <buffer> <silent> <F6> :echo "Starting JVM ..." <cr> :echo system("java ".expand("%:t:r")." 2>&1") <cr>
+
 inoremap <C-p> System.out.println()<esc>i
-nnoremap <F2> :Ctags<cr>
-nnoremap <F6> :Run<cr>
-nnoremap <F7> :Compile<cr>
+
 " }}}
 
 " plugin configurations: {{{
-
-" syntastic: {{{
-let g:syntastic_java_javac_config_file_enabled = 1
-let g:syntastic_java_javac_config_file = '.syntastic_java_config'
-" }}}
-
+"   auto-close Scratch when selected
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " }}}
