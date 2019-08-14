@@ -13,13 +13,17 @@ let g:LATEX_CONFIG = 1
 
 " basic configurations override {{{
 
+" enable spell checking under en_US
 setlocal spell spelllang=en_us
+
+" enable auto compile when saving
+autocmd BufWritePost *.tex AsyncRun make
 
 " }}}
 
 " filetype keymaps {{{
-nnoremap <F7> :!tex2pdf "%"<cr>
-nnoremap <F6> :!evince "%:t:r.pdf" &<cr>
+nnoremap <F7> :make <cr>
+nnoremap <F6> :!xdg-open "%:t:r.pdf" &<cr>
 " }}}
 
 " plugin configurations: {{{
@@ -28,9 +32,9 @@ nnoremap <F6> :!evince "%:t:r.pdf" &<cr>
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':"'", '$':'$'}
 let g:back_brackets += ['$']
 " }}}
-" syntastic: {{{
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_tex_checkers=['chktex']
+" AsyncRun: {{{
+let g:asyncrun_open = 6
+nnoremap <silent>,, :cclose<cr>
 " }}}
 
 " }}}
