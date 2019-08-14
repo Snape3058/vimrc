@@ -158,6 +158,10 @@ else
     Plug 'Lokaltog/vim-powerline'
     Plug 'rhysd/vim-clang-format'
     Plug 'skywind3000/asyncrun.vim'
+    "   Repo junegunn/fzf.vim requires functions defined in junegunn/fzf/plugin/fzf.vim
+    "   Download this file to /usr/share/vim/vimfiles/plugin/ or
+    "   install package archlinux/community/fzf
+    Plug 'junegunn/fzf.vim'
 
     "   syntax highlight rules
     Plug 'Mizuchi/STL-Syntax'
@@ -203,6 +207,13 @@ inoremap <expr> <tab> index(g:back_brackets, getline('.')[col('.')-1]) >= 0 ? "\
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
 let g:clang_format#auto_formatexpr = 1
+" }}}
+" fzf {{{
+let g:fzf_action = {
+    \ 'alt-enter': 'tab split',
+    \ 'enter': 'vsplit'}
+nnoremap <silent> ,o <esc>:Files<cr>
+nnoremap <silent> ,? <esc>:Lines<cr>
 " }}}
 
 " }}}
