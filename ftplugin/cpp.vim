@@ -46,6 +46,9 @@ nnoremap <buffer> <silent> <F6> :echo system(" ./".expand("%:t:r")." 2>&1") <cr>
 nnoremap <buffer> <silent> ,, :cw 8<cr>
 nnoremap <buffer> <silent> ,! :ccl<cr>
 
+" Shortcuts:
+inoremap <C-n> using namespace 
+
 " }}}
 
 " plugin configurations: {{{
