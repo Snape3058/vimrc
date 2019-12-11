@@ -109,12 +109,9 @@ nnoremap <silent> ,k :up<cr>:wincmd k<cr>
 nnoremap <silent> ,j :up<cr>:wincmd j<cr>
 
 "   tab control
-nnoremap <silent> ,e gT
-nnoremap <silent> ,r gt
-nnoremap <silent> ,J gT
-nnoremap <silent> ,K gt
 nnoremap <silent> ,x :tabclose<cr>gT
 nnoremap <silent> ,X :tabclose<cr>
+nnoremap <silent> ,t <C-W>T
 
 "   long line highlight switch
 nnoremap <silent> ,- :LineLengthCheckOn<cr>
@@ -188,7 +185,8 @@ let g:LanguageClient_rootMarkers = {
             \ 'c': ['compile_commands.json', 'build']
             \ }
 
-nnoremap <buffer> <silent> <c-]> :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'}) <cr>
+nnoremap <silent> ,] :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'}) <cr>
+nnoremap <silent> ,[ :call LanguageClient#textDocument_references({'gotoCmd': 'vsplit'}) <cr>
 " }}}
 " deoplete {{{
 let g:deoplete#enable_at_startup = 1
