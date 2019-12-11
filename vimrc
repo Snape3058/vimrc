@@ -210,6 +210,7 @@ let g:clang_format#auto_formatexpr = 1
 " }}}
 " fzf {{{
 let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
     \ 'alt-enter': 'tab split',
     \ 'enter': 'vsplit'}
 nnoremap <silent> ,o <esc>:Files<cr>
