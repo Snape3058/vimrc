@@ -47,10 +47,10 @@ nnoremap <buffer> <silent> ,, :cw 8<cr>
 nnoremap <buffer> <silent> ,! :ccl<cr>
 
 " Shortcuts:
-inoremap <C-n>i #include <bits/stdc++.h><cr>
-inoremap <C-n>n using namespace<space>
-inoremap <C-n>s using namespace std;
-inoremap <C-n>m int main(int argc, char *argv[]) {<cr>return 0;<cr>}
+inoremap <buffer> <C-n>i #include <bits/stdc++.h><cr>
+inoremap <buffer> <C-n>n using namespace<space>
+inoremap <buffer> <C-n>s using namespace std;
+inoremap <buffer> <C-n>m int main(int argc, char *argv[]) {<cr>return 0;<cr>}
 
 " }}}
 
