@@ -152,7 +152,7 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 
     Plug 'jiangmiao/auto-pairs'
-    Plug 'Lokaltog/vim-powerline'
+    Plug 'vim-airline/vim-airline'
     Plug 'rhysd/vim-clang-format'
     Plug 'skywind3000/asyncrun.vim'
     "   Repo junegunn/fzf.vim requires functions defined in junegunn/fzf/plugin/fzf.vim
