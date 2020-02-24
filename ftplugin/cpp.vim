@@ -43,9 +43,6 @@ nnoremap <buffer> <silent> <F7> :echo "Compiling ..." <cr> :echo system(b:cc.b:g
 " Run:
 nnoremap <buffer> <silent> <F6> :echo system(" ./".expand("%:t:r")." 2>&1") <cr>
 
-nnoremap <buffer> <silent> ,e :copen 10<cr>
-nnoremap <buffer> <silent> ,! :ccl<cr>
-
 " Shortcuts:
 inoremap <buffer> <C-n>i #include <bits/stdc++.h><cr>
 inoremap <buffer> <C-n>n using namespace<space>

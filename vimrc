@@ -127,6 +127,10 @@ nnoremap <silent> <2-RightMouse> :HighLightClear<cr>
 nnoremap <silent> ,' :SpellCheckOn<cr>
 nnoremap <silent> ,'_ :SpellCheckOff<cr>
 
+"   quick-fix window
+nnoremap <silent> ,f :copen 10<cr>
+nnoremap <silent> ,c :ccl<cr>
+
 "   new white line
 nnoremap - o<esc>
 nnoremap + O<esc>
