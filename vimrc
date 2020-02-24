@@ -196,7 +196,6 @@ nnoremap <silent> ,[ :call LanguageClient#textDocument_references({'gotoCmd': 'v
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
-inoremap <expr><cr> pumvisible() ? "\<c-n>" : "\<cr>"
 inoremap <expr><c-j> pumvisible() ? "\<c-n>" : "\<c-j>"
 inoremap <expr><c-k> pumvisible() ? "\<c-p>" : "\<c-k>"
 " }}}
