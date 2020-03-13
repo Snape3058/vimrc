@@ -24,6 +24,7 @@ autocmd BufWritePost *.tex AsyncRun make
 " filetype keymaps {{{
 nnoremap <F7> :make <cr>
 nnoremap <F6> :!xdg-open "%:t:r.pdf" &<cr>
+nnoremap <silent> ,= :!ydcv <cword> <cr>
 " }}}
 
 " plugin configurations: {{{
