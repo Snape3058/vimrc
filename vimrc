@@ -27,6 +27,7 @@ set ttimeoutlen=10
 set timeoutlen=1000
 set foldmethod=marker   " enable marker folding
 set wildignorecase      " ignore case when completing path/file names
+set pastetoggle=<F3>    " press <F3> to switch on/off paste mode
 
 " auto resize window when host window is resized
 autocmd VimResized * wincmd =
