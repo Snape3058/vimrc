@@ -194,9 +194,8 @@ nnoremap <silent> ,] :call LanguageClient#textDocument_definition({'gotoCmd': 'v
 nnoremap <silent> ,[ :call LanguageClient#textDocument_references({'gotoCmd': 'vsplit'}) <cr>
 " }}}
 " deoplete {{{
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-" call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
+call deoplete#enable()
+call deoplete#custom#option('smart_case', 1)
 inoremap <expr><c-j> pumvisible() ? "\<c-n>" : "\<c-j>"
 inoremap <expr><c-k> pumvisible() ? "\<c-p>" : "\<c-k>"
 " }}}
