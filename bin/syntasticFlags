@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-if [ -f '.syntastic_cpp_config' ]; then
-    cat .syntastic_cpp_config
-fi
