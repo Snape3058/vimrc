@@ -136,6 +136,9 @@ nnoremap <silent> ,c :ccl<cr>
 nnoremap - o<esc>
 nnoremap + O<esc>
 
+"   <F3> for switch between paste and nopaste
+" See *basic configurations* section
+
 " }}}
 
 " plugin management {{{
