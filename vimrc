@@ -210,6 +210,16 @@ inoremap <expr> <tab> index(g:back_brackets, getline('.')[col('.')-1]) >= 0 ? "\
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
 let g:clang_format#auto_formatexpr = 1
+
+function FlipAutoFormatSwitch()
+    if g:clang_format#auto_format == 0
+        let g:clang_format#auto_format = 1
+    else
+        let g:clang_format#auto_format = 0
+    endif
+endfunction
+
+nnoremap <silent> <F4> :call FlipAutoFormatSwitch() <cr>
 " }}}
 " fzf {{{
 let g:fzf_action = {
