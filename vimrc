@@ -192,6 +192,7 @@ let g:LanguageClient_rootMarkers = {
 
 nnoremap <silent> ,] :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'}) <cr>
 nnoremap <silent> ,[ :call LanguageClient#textDocument_references({'gotoCmd': 'vsplit'}) <cr>
+nnoremap <silent> ,! :call LanguageClient#textDocument_codeAction() <cr>
 " }}}
 " deoplete {{{
 call deoplete#enable()
