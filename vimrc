@@ -186,8 +186,8 @@ endif
 
 " LanguageClient {{{
 let g:LanguageClient_serverCommands = {}
-let g:LanguageClient_serverCommands.c = ['clangd']
-let g:LanguageClient_serverCommands.cpp = ['clangd']
+let g:LanguageClient_serverCommands.c = ['clangd', '-header-insertion=never']
+let g:LanguageClient_serverCommands.cpp = ['clangd', '-header-insertion=never']
 let g:LanguageClient_serverCommands.python = ['pyls']
 let g:LanguageClient_rootMarkers = {
             \ 'cpp': ['compile_commands.json', 'build'],
