@@ -103,34 +103,35 @@ nnoremap <left> zt
 nnoremap <right> zb
 
 "   window forcus
-nnoremap <silent> ,m :up<cr>:wincmd h<cr>
-nnoremap <silent> ,l :up<cr>:wincmd l<cr>
-nnoremap <silent> ,. :up<cr>:wincmd l<cr>
-nnoremap <silent> ,k :up<cr>:wincmd k<cr>
-nnoremap <silent> ,j :up<cr>:wincmd j<cr>
+nnoremap <silent> <space>h :up<cr>:wincmd h<cr>
+nnoremap <silent> <space>l :up<cr>:wincmd l<cr>
+nnoremap <silent> <space>k :up<cr>:wincmd k<cr>
+nnoremap <silent> <space>j :up<cr>:wincmd j<cr>
 
 "   tab control
-nnoremap <silent> ,x :tabclose<cr>gT
-nnoremap <silent> ,X :tabclose<cr>
-nnoremap <silent> ,t <C-W>T
+nnoremap <silent> <space>x :tabclose<cr>gT
+nnoremap <silent> <space>X :tabclose<cr>
+nnoremap <silent> <space>t <C-W>T
 
 "   long line highlight switch
-nnoremap <silent> ,- :LineLengthCheckOn<cr>
-nnoremap <silent> ,_ :LineLengthCheckOff<cr>
+nnoremap <silent> <space>$+ :LineLengthCheckOn<cr>
+nnoremap <silent> <space>$_ :LineLengthCheckOff<cr>
 
 "   search and unsearch
-nnoremap <silent> ,/ :HighLightCursorWord<cr>
+nnoremap <silent> <space>/ :HighLightCursorWord<cr>
 nnoremap <silent> _ :HighLightClear<cr>
 nnoremap <silent> <2-LeftMouse> :HighLightCursorWord<cr>
 nnoremap <silent> <2-RightMouse> :HighLightClear<cr>
 
 "   spell check
-nnoremap <silent> ,' :SpellCheckOn<cr>
-nnoremap <silent> ,'_ :SpellCheckOff<cr>
+nnoremap <silent> <space>S+ :SpellCheckOn<cr>
+nnoremap <silent> <space>S_ :SpellCheckOff<cr>
 
 "   quick-fix window
-nnoremap <silent> ,f :copen 10<cr>
-nnoremap <silent> ,c :ccl<cr>
+nnoremap <silent> <space>cc :copen 10<cr>
+nnoremap <silent> <space>cx :ccl<cr>
+nnoremap <silent> <space>cj :cn<cr>
+nnoremap <silent> <space>ck :cp<cr>
 
 "   new white line
 nnoremap - o<esc>
@@ -193,9 +194,9 @@ let g:LanguageClient_rootMarkers = {
             \ 'c': ['compile_commands.json', 'build']
             \ }
 
-nnoremap <silent> ,] :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'}) <cr>
-nnoremap <silent> ,[ :call LanguageClient#textDocument_references({'gotoCmd': 'vsplit'}) <cr>
-nnoremap <silent> ,! :call LanguageClient#textDocument_codeAction() <cr>
+nnoremap <silent> <space>] :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'}) <cr>
+nnoremap <silent> <space>[ :call LanguageClient#textDocument_references({'gotoCmd': 'vsplit'}) <cr>
+nnoremap <silent> <space>! :call LanguageClient#textDocument_codeAction() <cr>
 vnoremap <silent> !! :call LanguageClient#textDocument_rangeFormatting() <cr>
 " }}}
 " deoplete {{{
@@ -236,8 +237,8 @@ let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
     \ 'alt-enter': 'tab split',
     \ 'enter': 'vsplit'}
-nnoremap <silent> ,o <esc>:Files<cr>
-nnoremap <silent> ,? <esc>:Lines<cr>
+nnoremap <silent> <space>o <esc>:Files<cr>
+nnoremap <silent> <space>? <esc>:Lines<cr>
 " }}}
 
 " }}}
