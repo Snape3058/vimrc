@@ -137,6 +137,9 @@ nnoremap <silent> <space>ck :cp<cr>
 nnoremap - o<esc>
 nnoremap + O<esc>
 
+"   ydcv
+nnoremap <silent> <space>, :!ydcv <cword> <cr>
+
 "   <F3> for switch between paste and nopaste
 " See *basic configurations* section
 
