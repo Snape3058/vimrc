@@ -209,6 +209,8 @@ call deoplete#enable()
 call deoplete#custom#option('smart_case', 1)
 inoremap <expr><c-j> pumvisible() ? "\<c-n>" : "\<c-j>"
 inoremap <expr><c-k> pumvisible() ? "\<c-p>" : "\<c-k>"
+inoremap <expr><up> pumvisible() ? "\<c-p>" : "\<up>"
+inoremap <expr><down> pumvisible() ? "\<c-n>" : "\<down>"
 " }}}
 " auto-pairs {{{
 "     set <tab> as close operator
