@@ -178,6 +178,7 @@ else
     Plug 'pix/vim-known_hosts'
     Plug 'Snape3058/vim-smali'
     Plug 'bohlender/vim-smt2'
+    Plug 'vim-pandoc/vim-pandoc-syntax'
 
     " post load plugin manager {{{
     call plug#end()
