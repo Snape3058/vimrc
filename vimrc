@@ -171,6 +171,7 @@ else
     "   Download this file to /usr/share/vim/vimfiles/plugin/ or
     "   install package archlinux/community/fzf
     Plug 'junegunn/fzf.vim'
+    Plug 'godlygeek/tabular'
 
     "   syntax highlight rules
     Plug 'Mizuchi/STL-Syntax'
@@ -242,6 +243,9 @@ let g:fzf_action = {
     \ 'enter': 'vsplit'}
 nnoremap <silent> <space>o <esc>:Files<cr>
 nnoremap <silent> <space>? <esc>:Lines<cr>
+" }}}
+" Tabularize {{{
+vnoremap <space>= :Tabularize /
 " }}}
 
 " }}}
